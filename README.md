@@ -7,9 +7,9 @@
 
 # Project Title : Tourism Guide in Yogyakarta
 
-To check our work (web, mobile), u can changing the branch.. we make branch mobile for mobile, branch web for web, and branch API for API
+To check our work (web, mobile), u can changing the branch.. we make branch mobile for mobile, branch web,eaxample web for web, and branch API for API
 .
 1. branch : mobile
 .
-2. branch : web
+2. branch : web,example web
 3. branch : API
