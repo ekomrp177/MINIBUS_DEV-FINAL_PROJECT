@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#666666">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        app:cnb_iconColor="@color/home"/>
+    <item
+        android:id="@+id/tour"
+        android:icon="@drawable/ic_tour"
+        android:title="@string/tour"
+        app:cnb_iconColor="@color/tour"/>
+    <item
+        android:id="@+id/culinary"
+        android:icon="@drawable/ic_food"
+        android:title="@string/culinary"
+        app:cnb_iconColor="@color/culinary"/>
+</menu>

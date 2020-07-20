@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tourism Guide</string>
+    <string name="home">Home</string>
+    <string name="tour">Tourist Attraction</string>
+    <string name="culinary">Culinary</string>
+    <string name="title_card_view">Title Card View</string>
+    <string name="more_detail">More Detail</string>
+    <string name="image_culinary">Image Culinary</string>
+    <string name="image_tourism_attraction">Image Tourism Attraction</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+</resources>
