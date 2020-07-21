@@ -2,7 +2,7 @@
 
 # Leader : Eko Muhammad Rilo Pembudi (1800018368)
 # Programmer : Bayu Alif Farisqi (1800018335)
-# Web Front End : Qurrota Nastiti Raisa Aura Syifa (1800018240)
+# Web Front End : Qurrota Nastiti Rizqita Aura Syifa (1800018240)
 # Mobile Front End : Rifqi Luthfi Naldi (1800018368)
 
 # Project Title : Tourism Guide in Yogyakarta
