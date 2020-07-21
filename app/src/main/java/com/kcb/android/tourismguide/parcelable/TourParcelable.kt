@@ -5,11 +5,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TourParcelable (
-    var title: String,
-    var description: String,
-    var photo: String,
-    var timeOpen: String,
-    var timeClose: String,
-    var price: String,
-    var address: String
+    var id: String? = null,
+    var title: String? = null,
+    var description: String? = null,
+    var photo: String? = null,
+    var timeOpen: String? = null,
+    var timeClose: String? = null,
+    var price: String? = null,
+    var address: String? = null
 ): Parcelable

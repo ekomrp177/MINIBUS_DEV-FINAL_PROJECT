@@ -9,7 +9,14 @@ import com.kcb.android.tourismguide.parcelable.TourParcelable
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_cardview_tour.view.*
 
-class RecyclerViewTourAdapter(private val listTourismAttraction : ArrayList<TourParcelable>) : RecyclerView.Adapter<RecyclerViewTourAdapter.ViewHolder>() {
+class RecyclerViewTourAdapter() : RecyclerView.Adapter<RecyclerViewTourAdapter.ViewHolder>() {
+    private val mData = ArrayList<TourParcelable>()
+    fun setData(items: ArrayList<TourParcelable>) {
+        mData.clear()
+        mData.addAll(items)
+        notifyDataSetChanged()
+    }
+
     inner class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(tourParcelable: TourParcelable){
             with(itemView){
@@ -24,9 +31,9 @@ class RecyclerViewTourAdapter(private val listTourismAttraction : ArrayList<Tour
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = listTourismAttraction.size
+    override fun getItemCount(): Int = mData.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(mData[position])
     }
 }
