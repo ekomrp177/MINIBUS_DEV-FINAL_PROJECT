@@ -3,6 +3,7 @@ package com.kcb.android.tourismguide
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kcb.android.tourismguide.ui.culinary.CulinaryFragment
+import com.kcb.android.tourismguide.ui.favorite.FavoriteFragment
 import com.kcb.android.tourismguide.ui.home.HomeFragment
 import com.kcb.android.tourismguide.ui.tour.TourFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.culinary -> {
                     supportFragmentManager.beginTransaction().replace(R.id.fragment_view, CulinaryFragment()).commit()
+                }
+                R.id.profile -> {
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_view, FavoriteFragment()).commit()
                 }
             }
         }

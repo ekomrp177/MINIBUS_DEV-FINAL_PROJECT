@@ -18,4 +18,9 @@
         android:icon="@drawable/ic_food"
         android:title="@string/culinary"
         app:cnb_iconColor="@color/culinary"/>
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/favorite"
+        app:cnb_iconColor="@color/favorite"/>
 </menu>
