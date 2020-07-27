@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pariwisataapi',
+    'kulinerapi',
     'rest_framework'
 ]
 
