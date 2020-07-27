@@ -1,34 +1,27 @@
 package com.kcb.android.tourismguide.ui.culinary
 
+import android.content.Intent
+import android.net.NetworkInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.kcb.android.tourismguide.R
+import com.kcb.android.tourismguide.adapter.RecycleViewCulinaryAdapter
+import com.kcb.android.tourismguide.adapter.RecyclerViewTourAdapter
+import com.kcb.android.tourismguide.parcelable.CulinaryParcelable
+import com.kcb.android.tourismguide.viewmodel.culinary.CulinaryViewModel
+import com.kcb.android.tourismguide.viewmodel.tour.TourViewModel
+import kotlinx.android.synthetic.main.fragment_tour.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CulinaryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CulinaryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var adapter: RecycleViewCulinaryAdapter
+    private lateinit var culinaryViewModel: CulinaryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +31,30 @@ class CulinaryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_culinary, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CulinaryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CulinaryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        adapter = RecycleViewCulinaryAdapter()
+        adapter.notifyDataSetChanged()
+
+        recycleview.layoutManager = LinearLayoutManager(context)
+        recycleview.adapter = adapter
+
+        culinaryViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(CulinaryViewModel::class.java)
+
+        culinaryViewModel.setCulinary()
+        culinaryViewModel.getCulinary().observe(viewLifecycleOwner, Observer { Culinary ->
+            if(Culinary != null) {
+                adapter.setData(Culinary)
+                progressBar.visibility = View.INVISIBLE
             }
+        })
+        adapter.setOnItemClickCallBack(object: RecycleViewCulinaryAdapter.OnItemClickCallBack{
+            override fun onItemClicked(culinaryParcelable: CulinaryParcelable) {
+                var intent = Intent(context,CulinaryDetailActivity::class.java)
+                intent.putExtra(CulinaryDetailActivity.EXTRA_DATA, culinaryParcelable)
+                startActivity(intent)
+            }
+        })
     }
 }
