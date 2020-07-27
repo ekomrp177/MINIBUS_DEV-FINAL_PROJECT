@@ -17,12 +17,21 @@ class RecyclerViewTourAdapter() : RecyclerView.Adapter<RecyclerViewTourAdapter.V
         notifyDataSetChanged()
     }
 
+    private var onItemClickCallBack : OnItemClickCallBack? = null
+    interface OnItemClickCallBack{
+        fun onItemClicked(tourParcelable: TourParcelable)
+    }
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
+
     inner class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bind(tourParcelable: TourParcelable){
             with(itemView){
                 Picasso.get().load(tourParcelable.photo).into(tour_image)
                 tour_title.text = tourParcelable.title
             }
+            itemView.setOnClickListener{ onItemClickCallBack?.onItemClicked(tourParcelable)}
         }
     }
 

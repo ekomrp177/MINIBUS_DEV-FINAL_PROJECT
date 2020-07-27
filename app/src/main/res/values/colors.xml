@@ -8,4 +8,6 @@
     <color name="tour">#c9379d</color>
     <color name="culinary">#e6a919</color>
     <color name="favorite">#2ABF00</color>
+
+    <color name="black">#000000</color>
 </resources>

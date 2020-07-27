@@ -16,13 +16,21 @@ class RecycleViewCulinaryAdapter: RecyclerView.Adapter<RecycleViewCulinaryAdapte
         mData.addAll(items)
         notifyDataSetChanged()
     }
+    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack){
+        this.onItemClickCallBack = onItemClickCallBack
+    }
 
+    private var onItemClickCallBack : OnItemClickCallBack? = null
+    interface OnItemClickCallBack{
+        fun onItemClicked(culinaryParcelable: CulinaryParcelable)
+    }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(tourParcelable: CulinaryParcelable){
+        fun bind(culinaryParcelable: CulinaryParcelable){
             with(itemView){
-                Picasso.get().load(tourParcelable.photo).into(culinary_image)
-                culinary_title.text = tourParcelable.title
+                Picasso.get().load(culinaryParcelable.photo).into(culinary_image)
+                culinary_title.text = culinaryParcelable.title
             }
+            itemView.setOnClickListener { onItemClickCallBack?.onItemClicked(culinaryParcelable) }
         }
     }
 

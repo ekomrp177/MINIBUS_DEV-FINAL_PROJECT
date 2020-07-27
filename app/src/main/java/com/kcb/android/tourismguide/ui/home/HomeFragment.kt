@@ -25,9 +25,9 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        imageList.add(SlideModel("https://bit.ly/2YoJ77H", "The animal population decreased by 58 percent in 42 years."))
-        imageList.add(SlideModel("https://bit.ly/2BteuF2", "Elephants and tigers may become extinct."))
-        imageList.add(SlideModel("https://bit.ly/3fLJf72", "And people do that."))
+        imageList.add(SlideModel("https://cdn2.tstatic.net/jogja/foto/bank/images/heha-sky-view.jpg", "Travel makes one modest. You see what a tiny place you occupy in the world."))
+        imageList.add(SlideModel("https://cdn2.tstatic.net/jogja/foto/bank/images/rekomendasi-wisata-jogja-hits-buat-kamu-yang-liburan-di-yogyakarta.jpg", "“Live your life by a compass, not a clock"))
+        imageList.add(SlideModel("https://cdn2.tstatic.net/jogja/foto/bank/images/dekorasi-musim-salju-hiasi-perkemahan-glamping-kaliurang.jpg", "A journey is best measured in friends, rather than miles."))
 
         image_slider.setImageList(imageList)
     }

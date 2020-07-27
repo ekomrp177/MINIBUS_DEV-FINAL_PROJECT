@@ -1,22 +1,22 @@
-package com.kcb.android.tourismguide.viewmodel.tour
+package com.kcb.android.tourismguide.viewmodel.culinary
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kcb.android.tourismguide.parcelable.TourParcelable
+import com.kcb.android.tourismguide.parcelable.CulinaryParcelable
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.TextHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
 import java.lang.Exception
 
-class TourViewModel: ViewModel() {
-    val listTour = MutableLiveData<ArrayList<TourParcelable>>()
+class CulinaryViewModel : ViewModel() {
+    val listCulinary = MutableLiveData<ArrayList<CulinaryParcelable>>()
 
-    fun setTourAttraction(){
-        val listItem = ArrayList<TourParcelable>()
-        val url = "https://thawing-anchorage-78445.herokuapp.com/api/pariwisata/"
+    fun setCulinary(){
+        val listItem = ArrayList<CulinaryParcelable>()
+        val url = "https://thawing-anchorage-78445.herokuapp.com/api/kuliner/"
 
         val client = AsyncHttpClient()
         client.get(url, object : TextHttpResponseHandler() {
@@ -29,7 +29,7 @@ class TourViewModel: ViewModel() {
                     val result = responseBody!!
                     val list = JSONArray(result)
                     for (i in 0 until list.length()){
-                        val temp = TourParcelable()
+                        val temp = CulinaryParcelable()
                         val listObject = list.getJSONObject(i)
                         temp.id = listObject.getString("id")
                         temp.title = listObject.getString("fullname")
@@ -41,7 +41,7 @@ class TourViewModel: ViewModel() {
                         temp.photo = listObject.getString("images")
                         listItem.add(temp)
                     }
-                    listTour.postValue(listItem)
+                    listCulinary.postValue(listItem)
 
                 }catch (e: Exception){
                     Log.d("Exception", e.message.toString())
@@ -58,8 +58,7 @@ class TourViewModel: ViewModel() {
             }
         })
     }
-    fun getTourAttraction(): LiveData<ArrayList<TourParcelable>>{
-        return listTour
+    fun getCulinary(): LiveData<ArrayList<CulinaryParcelable>> {
+        return listCulinary
     }
-
 }

@@ -1,5 +1,6 @@
 package com.kcb.android.tourismguide.ui.tour
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,6 +45,12 @@ class TourFragment : Fragment() {
                 progressBar.visibility = View.INVISIBLE
             }
         })
-        
+        adapter.setOnItemClickCallBack(object : RecyclerViewTourAdapter.OnItemClickCallBack {
+            override fun onItemClicked(tourParcelable: TourParcelable) {
+                var intent = Intent(context, TourDetailActivity::class.java)
+                intent.putExtra(TourDetailActivity.EXTRA_DATA, tourParcelable)
+                startActivity(intent)
+            }
+        })
     }
 }
