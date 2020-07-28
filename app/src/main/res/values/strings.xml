@@ -9,6 +9,9 @@
     <string name="image_tourism_attraction">Image Tourism Attraction</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile_image">Profile Image</string>
+    <string name="tab_tour">Attraction</string>
+    <string name="tab_culinary">Culinary</string>
+    <string name="favorite_information">No Favorite Data</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

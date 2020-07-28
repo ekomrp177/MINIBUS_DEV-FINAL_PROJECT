@@ -26,7 +26,7 @@ class TourViewModel: ViewModel() {
                 responseBody: String?
             ) {
                 try {
-                    val result = responseBody!!
+                    val result = responseBody
                     val list = JSONArray(result)
                     for (i in 0 until list.length()){
                         val temp = TourParcelable()
