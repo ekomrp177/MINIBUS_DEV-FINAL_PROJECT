@@ -1,11 +1,14 @@
 package com.kcb.android.tourismguide.ui.tour
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +16,13 @@ import com.kcb.android.tourismguide.R
 import com.kcb.android.tourismguide.adapter.RecyclerViewTourAdapter
 import com.kcb.android.tourismguide.parcelable.TourParcelable
 import com.kcb.android.tourismguide.viewmodel.tour.TourViewModel
-import kotlinx.android.synthetic.main.fragment_tour.*
+import kotlinx.android.synthetic.main.fragment_tour.internetconn
+import kotlinx.android.synthetic.main.fragment_tour.progressBar
+import kotlinx.android.synthetic.main.fragment_tour.recycleview
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class TourFragment : Fragment() {
     private lateinit var adapter: RecyclerViewTourAdapter
@@ -24,6 +33,16 @@ class TourFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        GlobalScope.launch(context = Dispatchers.Main) {
+            delay(5000)
+            progressBar.visibility = View.INVISIBLE
+            if (!verifyAvailableNetwork((activity as AppCompatActivity)) && adapter.itemCount == 0){
+                internetconn.text = "Check your internet connection!"
+            }
+            else if(adapter.itemCount == 0) {
+                internetconn.text = "Access is limited!\nPlease try again in few minutes..."
+            }
+        }
         return inflater.inflate(R.layout.fragment_tour, container, false)
     }
 
@@ -41,8 +60,8 @@ class TourFragment : Fragment() {
         tourViewModel.setTourAttraction()
         tourViewModel.getTourAttraction().observe(viewLifecycleOwner, Observer { TourParcelable ->
             if(TourParcelable != null) {
-                adapter.setData(TourParcelable)
                 progressBar.visibility = View.INVISIBLE
+                adapter.setData(TourParcelable)
             }
         })
         adapter.setOnItemClickCallBack(object : RecyclerViewTourAdapter.OnItemClickCallBack {
@@ -52,5 +71,11 @@ class TourFragment : Fragment() {
                 startActivity(intent)
             }
         })
+
+    }
+    private fun verifyAvailableNetwork(activity: AppCompatActivity):Boolean{
+        val connectivityManager= activity.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo= connectivityManager.activeNetworkInfo
+        return  networkInfo!=null && networkInfo.isConnected
     }
 }
