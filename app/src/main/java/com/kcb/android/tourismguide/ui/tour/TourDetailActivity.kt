@@ -1,5 +1,6 @@
 package com.kcb.android.tourismguide.ui.tour
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +22,7 @@ class TourDetailActivity : AppCompatActivity() {
     }
     private var tourDatabase: TourDatabase? = null
     private var isFavorite = false
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tour_detail)
@@ -31,9 +33,9 @@ class TourDetailActivity : AppCompatActivity() {
         title_detail_view.text = tourObject?.title
         Picasso.get().load(tourObject?.photo).into(image_detail)
         detail_description.text = tourObject?.description
-        detail_address.text = "Address : "+tourObject?.address
-        detail_clock.text = "Open  : ${tourObject?.timeOpen} - ${tourObject?.timeClose}"
-        detail_price.text = "Price : Rp. "+tourObject?.price
+        detail_address.text = tourObject?.address
+        detail_clock.text = tourObject?.timeOpen +" - "+ tourObject?.timeClose
+        detail_price.text = "Rp. "+tourObject?.price
 
         val progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Loading...")

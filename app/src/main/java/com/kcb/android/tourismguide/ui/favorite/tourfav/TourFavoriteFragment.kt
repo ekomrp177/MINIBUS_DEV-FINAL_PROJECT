@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kcb.android.tourismguide.R
 import com.kcb.android.tourismguide.adapter.RecyclerViewTourAdapter
@@ -19,7 +20,7 @@ import kotlinx.coroutines.launch
 class TourFavoriteFragment : Fragment() {
     private lateinit var favTourFavoriteAdapter: RecyclerViewTourAdapter
     private val listItems = ArrayList<TourParcelable>()
-    internal var tourDatabase: TourDatabase? = null
+    private var tourDatabase: TourDatabase? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

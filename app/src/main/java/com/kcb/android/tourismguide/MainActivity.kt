@@ -1,35 +1,30 @@
 package com.kcb.android.tourismguide
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kcb.android.tourismguide.ui.culinary.CulinaryFragment
-import com.kcb.android.tourismguide.ui.favorite.FavoriteFragment
-import com.kcb.android.tourismguide.ui.home.HomeFragment
-import com.kcb.android.tourismguide.ui.tour.TourFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.Job
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        var job: Job? = null
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        menu_bottom.setItemSelected(R.id.home)
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_view, HomeFragment()).commit()
-        menu_bottom.setOnItemSelectedListener { id ->
-            when(id){
-                R.id.home -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_view, HomeFragment()).commit()
-                }
-                R.id.tour -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_view, TourFragment()).commit()
-                }
-                R.id.culinary -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_view, CulinaryFragment()).commit()
-                }
-                R.id.profile -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_view, FavoriteFragment()).commit()
-                }
-            }
-        }
+        val navController = findNavController(R.id.nav_host_fragment)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.navigation_home, R.id.navigation_tour, R.id.navigation_culinary, R.id.navigation_favorite
+        ).build()
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
+
 }

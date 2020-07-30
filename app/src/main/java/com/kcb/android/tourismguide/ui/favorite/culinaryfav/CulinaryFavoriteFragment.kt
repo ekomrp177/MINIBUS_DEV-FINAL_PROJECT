@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 class CulinaryFavoriteFragment : Fragment() {
     private lateinit var favCulinaryAdapter: RecycleViewCulinaryAdapter
     private val listItems = ArrayList<CulinaryParcelable>()
-    internal var culinaryDatabase: CulinaryDatabase? = null
+    private var culinaryDatabase: CulinaryDatabase? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

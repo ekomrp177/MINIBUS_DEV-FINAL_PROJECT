@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="55dp"
     tools:context=".ui.home.HomeFragment">
 
     <com.denzcoskun.imageslider.ImageSlider
@@ -14,4 +19,59 @@
         app:iss_auto_cycle="true"
         app:iss_period="10000"
         app:iss_delay="0"/>
+
+    <TextView
+        android:id="@+id/tv_recom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/image_slider"
+        android:text="@string/recommendation"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview_tour"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_recom"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:reverseLayout="true"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_cardview_tour"/>
+    <TextView
+        android:id="@+id/tv_norecom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@id/tv_recom"/>
+
+    <TextView
+        android:id="@+id/tv_recomfood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/recycleview_tour"
+        android:text="@string/recommendationfood"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview_culinary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_recomfood"
+        android:orientation="horizontal"
+        android:layout_marginBottom="55dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:reverseLayout="true"
+        tools:listitem="@layout/item_cardview_tour"/>
+    <TextView
+        android:id="@+id/tv_norecom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="35dp"
+        android:layout_below="@id/tv_recomfood"/>
 </RelativeLayout>
+</ScrollView>

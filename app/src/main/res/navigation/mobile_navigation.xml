@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.kcb.android.tourismguide.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_tour"
+        android:name="com.kcb.android.tourismguide.ui.tour.TourFragment"
+        android:label="@string/tour"
+        tools:layout="@layout/fragment_tour" />
+
+    <fragment
+        android:id="@+id/navigation_culinary"
+        android:name="com.kcb.android.tourismguide.ui.culinary.CulinaryFragment"
+        android:label="@string/culinary"
+        tools:layout="@layout/fragment_culinary" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.kcb.android.tourismguide.ui.favorite.FavoriteFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>

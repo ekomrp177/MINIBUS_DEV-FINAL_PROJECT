@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".ui.culinary.CulinaryDetailActivity">
 <ScrollView
     android:layout_width="match_parent"
@@ -12,7 +13,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp">
+    android:layout_marginTop="8dp"
+    android:paddingBottom="55dp">
     <ImageView
         android:id="@+id/image_detail"
         android:layout_width="match_parent"
@@ -38,26 +40,41 @@
         app:layout_constraintTop_toBottomOf="@+id/title_detail_view"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="4dp"/>
-    <TextView
-        android:id="@+id/detail_clock"
+    <TableLayout
+        android:id="@+id/table_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/detail_description"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"/>
-    <TextView
-        android:id="@+id/detail_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/detail_clock"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="4dp"/>
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/detail_description">
+        <TableRow>
+            <TextView
+                android:text="@string/time_open"/>
+            <TextView
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/semi_colom"/>
+            <TextView
+                android:id="@+id/detail_clock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/time_price"/>
+            <TextView
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/semi_colom"/>
+            <TextView
+                android:id="@+id/detail_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
     <TextView
         android:id="@+id/detail_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/detail_price"
-        android:layout_marginHorizontal="16dp"/>
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/table_view"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

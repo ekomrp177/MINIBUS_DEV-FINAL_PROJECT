@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cnb_unselectedColor="#666666">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
-        android:title="@string/home"
-        app:cnb_iconColor="@color/home"/>
+        android:title="@string/home"/>
     <item
-        android:id="@+id/tour"
+        android:id="@+id/navigation_tour"
         android:icon="@drawable/ic_tour"
-        android:title="@string/tour"
-        app:cnb_iconColor="@color/tour"/>
+        android:title="@string/tour"/>
     <item
-        android:id="@+id/culinary"
+        android:id="@+id/navigation_culinary"
         android:icon="@drawable/ic_food"
-        android:title="@string/culinary"
-        app:cnb_iconColor="@color/culinary"/>
+        android:title="@string/culinary"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/navigation_favorite"
         android:icon="@drawable/ic_favorite"
-        android:title="@string/favorite"
-        app:cnb_iconColor="@color/favorite"/>
+        android:title="@string/favorite"/>
 </menu>
