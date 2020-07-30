@@ -11,8 +11,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.kcb.android.tourismguide.R
 import com.kcb.android.tourismguide.parcelable.TourParcelable
 import com.kcb.android.tourismguide.room.tour.TourDatabase
-import com.kcb.android.tourismguide.ui.home.HomeFragment
-import com.kcb.android.tourismguide.ui.maps.MapsFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_tour_detail.*
 import kotlinx.coroutines.GlobalScope
@@ -39,7 +37,6 @@ class TourDetailActivity : AppCompatActivity() {
         detail_clock.text = tourObject?.timeOpen +" - "+ tourObject?.timeClose
         detail_price.text = "Rp. "+tourObject?.price
 
-        supportFragmentManager.beginTransaction().replace(R.id.maps_detail_tour, MapsFragment()).commit()
         val progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Loading...")
         progressDialog.isIndeterminate

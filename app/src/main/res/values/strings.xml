@@ -19,8 +19,30 @@
     <string name="recommendation">Place Recommendation</string>
     <string name="recommendationfood">Food Recommendation</string>
     <string name="about">About</string>
-    <string name="job">Leader</string>
     <string name="name_leader">Eko Muhammad Rilo Pembudi</string>
+    <string name="nim_leader">1800018368</string>
+    <string name="job_leader">Leader - Mobile Backend</string>
+    <string name="ig_leader">muhammadrilo17</string>
+
+    <string name="name_member1">Bayu Alif Farisqi</string>
+    <string name="nim_member1">1800018335</string>
+    <string name="job_member1">Member - Web Backend</string>
+    <string name="ig_member1">aliffarisqi_dev</string>
+
+
+    <string name="name_member2">Qurrota Nastiti Rizqita Aura Syifa</string>
+    <string name="nim_member2">1800018240</string>
+    <string name="job_member2">Member - Web Frontend</string>
+    <string name="ig_member2">qurrotara_</string>
+
+
+    <string name="name_member3">Rifqi Luthfi Naldi</string>
+    <string name="nim_member3">1800018368</string>
+    <string name="job_member3">Member - Mobile Frontend</string>
+    <string name="ig_member3">rifqiluthfin</string>
+
+    <string name="minibus_dev">MINIBUS DEV</string>
+    <string name="image_tim">Image tim</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
