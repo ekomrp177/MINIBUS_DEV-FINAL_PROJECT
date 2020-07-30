@@ -1,7 +1,9 @@
 # MINIBUS_DEV-FINAL_PROJECT
 
-# to see the example web. can access in minibuskancaplesir.epizy.com
-
+# to see the example web. can access at : <br>
+```bash
+http://minibus.epizy.com/
+```
 # Leader : Eko Muhammad Rilo Pembudi (1800018368)
 # Programmer : Bayu Alif Farisqi (1800018335)
 # Web Front End : Qurrota Nastiti Rizqita Aura Syifa (1800018240)
