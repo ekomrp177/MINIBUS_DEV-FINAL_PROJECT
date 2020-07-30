@@ -7,15 +7,12 @@
     <string name="title_card_view">Title Card View</string>
     <string name="image_culinary">Image Culinary</string>
     <string name="image_tourism_attraction">Image Tourism Attraction</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="profile_image">Profile Image</string>
     <string name="tab_tour">Attraction</string>
     <string name="tab_culinary">Culinary</string>
     <string name="favorite_information">No Favorite Data</string>
     <string name="time_open">Open</string>
     <string name="semi_colom">:</string>
     <string name="time_price">Price</string>
-    <string name="time_address">Address</string>
     <string name="recommendation">Place Recommendation</string>
     <string name="recommendationfood">Food Recommendation</string>
     <string name="about">About</string>
