@@ -12,6 +12,15 @@
     <string name="tab_tour">Attraction</string>
     <string name="tab_culinary">Culinary</string>
     <string name="favorite_information">No Favorite Data</string>
+    <string name="time_open">Open</string>
+    <string name="semi_colom">:</string>
+    <string name="time_price">Price</string>
+    <string name="time_address">Address</string>
+    <string name="recommendation">Place Recommendation</string>
+    <string name="recommendationfood">Food Recommendation</string>
+    <string name="about">About</string>
+    <string name="job">Leader</string>
+    <string name="name_leader">Eko Muhammad Rilo Pembudi</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

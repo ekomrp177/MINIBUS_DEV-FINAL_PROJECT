@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kcb.android.tourismguide.MainActivity.Companion.job
 import com.kcb.android.tourismguide.R
 import com.kcb.android.tourismguide.adapter.RecycleViewCulinaryAdapter
 import com.kcb.android.tourismguide.parcelable.CulinaryParcelable
@@ -36,34 +37,32 @@ class CulinaryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        GlobalScope.launch(context = Dispatchers.Main) {
-            delay(5000)
-            progressBar.visibility = View.INVISIBLE
-            if (!verifyAvailableNetwork((activity as AppCompatActivity)) && adapter.itemCount == 0){
-                internetconn.text = "Check your internet connection!"
-            }
-            else if(adapter.itemCount == 0) {
-                internetconn.text = "Access is limited!\nPlease try again in few minutes..."
-            }
-        }
         return inflater.inflate(R.layout.fragment_culinary, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        progressBar.visibility = View.VISIBLE
         adapter = RecycleViewCulinaryAdapter()
         adapter.notifyDataSetChanged()
 
         recycleview.layoutManager = LinearLayoutManager(context)
         recycleview.adapter = adapter
 
+        job?.cancel()
+        job = GlobalScope.launch(context = Dispatchers.Main) {
+            delay(5000)
+            if (!verifyAvailableNetwork((activity as AppCompatActivity)) && adapter.itemCount == 0){
+                progressBar.visibility = View.INVISIBLE
+                internetconn.text = "Check your internet connection!"
+            }
+        }
+
         culinaryViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(CulinaryViewModel::class.java)
 
         culinaryViewModel.setCulinary()
         culinaryViewModel.getCulinary().observe(viewLifecycleOwner, Observer { Culinary ->
             if(Culinary != null) {
-                progressBar.visibility = View.INVISIBLE
+                progressBar?.visibility = View.INVISIBLE
                 adapter.setData(Culinary)
             }
         })

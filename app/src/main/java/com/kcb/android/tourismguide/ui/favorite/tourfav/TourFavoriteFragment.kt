@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 class TourFavoriteFragment : Fragment() {
     private lateinit var favTourFavoriteAdapter: RecyclerViewTourAdapter
     private val listItems = ArrayList<TourParcelable>()
-    internal var tourDatabase: TourDatabase? = null
+    private var tourDatabase: TourDatabase? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
