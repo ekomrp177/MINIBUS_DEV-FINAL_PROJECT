@@ -18,8 +18,24 @@ To check our work (web, mobile), u can changing the branch.. we make branch mobi
 .<br>
 .<br>
 # ATTENTTION PLEASE<br>
-URL to use this api : https://thawing-anchorage-78445.herokuapp.com/api/ <br>
-to get API for Pariwisata in Yogyakarta u need add : /pariwisata/ <br>
-to get API for Food in Yogyakarta u need add : /kuliner/ <br>
+URL to use this api :
+```bash
+ https://thawing-anchorage-78445.herokuapp.com/api/
+```
+<br>
+to get API for Pariwisata in Yogyakarta u need add : 
+```bash
+/pariwisata/
+```
+<br>
+to get API for Food in Yogyakarta u need add : 
+
+```bash
+/kuliner/ 
+```
+<br>
 .<br>
-when u need to trying this project for first time after clone u need to : pip install -r requirements.txt
+when u need to trying this project for first time after clone u need to : 
+```bash
+pip install -r requirements.txt
+```
