@@ -18,9 +18,6 @@ import com.kcb.android.tourismguide.adapter.RecyclerViewTourAdapter
 import com.kcb.android.tourismguide.parcelable.TourParcelable
 import com.kcb.android.tourismguide.viewmodel.tour.TourViewModel
 import kotlinx.android.synthetic.main.fragment_culinary.*
-import kotlinx.android.synthetic.main.fragment_tour.internetconn
-import kotlinx.android.synthetic.main.fragment_tour.progressBar
-import kotlinx.android.synthetic.main.fragment_tour.recycleview
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay

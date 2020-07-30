@@ -1,6 +1,5 @@
 package com.kcb.android.tourismguide
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController

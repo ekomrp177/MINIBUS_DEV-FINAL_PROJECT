@@ -3,7 +3,6 @@ package com.kcb.android.tourismguide.ui.favorite
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import com.kcb.android.tourismguide.MainActivity.Companion.job

@@ -79,7 +79,7 @@ class TourDetailActivity : AppCompatActivity() {
                     Snackbar.make(view, "Added to favorite", Snackbar.LENGTH_SHORT).show()
                     GlobalScope.launch {
                         this.let {
-                            tourDatabase?.tourDao()?.insert(tourObject!!)
+                            tourDatabase?.tourDao()?.insert(tourObject)
                         }
                     }
                     isFavorite = true

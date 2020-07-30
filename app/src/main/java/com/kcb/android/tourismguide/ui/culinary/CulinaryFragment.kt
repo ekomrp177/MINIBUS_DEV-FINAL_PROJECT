@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -19,10 +18,6 @@ import com.kcb.android.tourismguide.adapter.RecycleViewCulinaryAdapter
 import com.kcb.android.tourismguide.parcelable.CulinaryParcelable
 import com.kcb.android.tourismguide.viewmodel.culinary.CulinaryViewModel
 import kotlinx.android.synthetic.main.fragment_culinary.*
-import kotlinx.android.synthetic.main.fragment_culinary.internetconn
-import kotlinx.android.synthetic.main.fragment_culinary.progressBar
-import kotlinx.android.synthetic.main.fragment_culinary.recycleview
-import kotlinx.android.synthetic.main.fragment_tour.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
