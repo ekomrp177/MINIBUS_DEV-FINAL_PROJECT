@@ -1,13 +1,17 @@
 # MINIBUS_DEV-FINAL_PROJECT
 #Trying this application
 
-'''bash
+```bash
 app/release/app-release.apk
-'''
+```
 Requirements
 <br>
 OS : Android Marsmallow 6.0
 Screenshot Our App - Kanca Plesir
+Link Downlaod : 
+```bash
+http://tiny.cc/kanca_plesir
+```
 
 #Icon
 
