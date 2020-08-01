@@ -3,6 +3,14 @@
 # to see the example web. can access at : <br>
 ```bash
 http://minibus.epizy.com/
+
+email for try
+admin : jakartabanyuu@gmail.com
+pass: 123456
+member : bayualiev@gmail.com
+pass: 123456
+
+or you can create new account using your email(use emaile active)
 ```
 # Leader : Eko Muhammad Rilo Pembudi (1800018368)
 # Programmer : Bayu Alif Farisqi (1800018335)
