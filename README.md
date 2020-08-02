@@ -7,14 +7,17 @@ app/release/app-release.apk
 Requirements
 <br>
 OS : Android Marsmallow 6.0
+<br>
 Screenshot Our App - Kanca Plesir
 Link Downlaod : 
 ```bash
 http://tiny.cc/kanca_plesir
 ```
-
+#Ready in Playstore
+```bash
+https://play.google.com/store/apps/details?id=com.kcb.android.tourismguide
+```
 #Icon
-
 ![icon_kanca_plesir](https://user-images.githubusercontent.com/45749606/88999850-f10f9a80-d31f-11ea-8d1b-baee7929c717.png)
 #
 #
